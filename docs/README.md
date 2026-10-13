@@ -17,6 +17,7 @@ Mulai dari [AGENTS.md](../AGENTS.md): ringkasan proyek, perintah, peta kode, dan
 | [konvensi.md](konvensi.md) | Gaya kode, bahasa, design token, komponen, aturan UI |
 | [keputusan-teknis.md](keputusan-teknis.md) | Kenapa sesuatu dibuat begitu (dan bug apa yang muncul kalau diubah) |
 | [masalah-diketahui.md](masalah-diketahui.md) | Masalah yang belum selesai, batasan, dan ide pengembangan |
+| [web.md](web.md) | Versi web: server Node + browser, login, setup di Linux |
 
 Riwayat versi ada di [CHANGELOG.md](../CHANGELOG.md).
 

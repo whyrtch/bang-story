@@ -32,6 +32,8 @@ export function modelDir(): string {
 const modelPath = (): string => join(modelDir(), MODEL.file)
 
 function cliPath(): string {
+  // The bundled whisper-cli.exe is Windows-only; the web server on Linux points this at its own build.
+  if (process.env.STUDIO_WHISPER_CLI) return process.env.STUDIO_WHISPER_CLI
   return app.isPackaged ? join(process.resourcesPath, 'whisper', 'whisper-cli.exe') : join(app.getAppPath(), 'resources', 'whisper', 'whisper-cli.exe')
 }
 

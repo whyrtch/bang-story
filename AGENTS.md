@@ -14,6 +14,7 @@ npm run dev            # jalankan aplikasi dalam mode pengembangan (hot reload r
 npm run typecheck      # wajib bersih sebelum selesai: tsconfig.node.json + tsconfig.web.json
 npm run build          # build ke folder out/ (main, preload, renderer)
 npm run dist           # build + installer Windows (NSIS) ke folder dist/
+npm run web:build      # versi web (server Node + renderer untuk browser), lihat docs/web.md
 ```
 
 Tidak ada framework unit test. Verifikasi dilakukan dengan `npm run typecheck`, `npm run build`, dan **dev harness**
@@ -43,6 +44,8 @@ src/
   preload/         jembatan aman: window.api (lihat src/shared/api.ts)
   shared/          kode yang dipakai main DAN renderer (tipe, aturan gerak, caption, timeline)
   renderer/src/    tampilan React + Tailwind v4 + Zustand
+  server/          versi web: server HTTP + pengganti modul electron (electron-shim.ts)
+  web/             versi web: window.api lewat HTTP untuk browser
     pages/project/  langkah Ide, Naskah, Storyboard, Editor
     pages/project/editor/  pratinjau (Player), Timeline, Inspector (panel kanan), engine pemutaran
 resources/         font caption, whisper-cli.exe + DLL, file lisensi
@@ -96,3 +99,4 @@ docs/              dokumentasi pengembang
 | Gaya kode dan aturan UI | [docs/konvensi.md](docs/konvensi.md) |
 | Keputusan teknis dan alasannya | [docs/keputusan-teknis.md](docs/keputusan-teknis.md) |
 | Masalah yang diketahui dan ide lanjutan | [docs/masalah-diketahui.md](docs/masalah-diketahui.md) |
+| Versi web (server + browser) | [docs/web.md](docs/web.md) |

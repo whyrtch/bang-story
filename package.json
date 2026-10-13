@@ -15,7 +15,10 @@
     "typecheck:web": "tsc --noEmit -p tsconfig.web.json",
     "typecheck": "npm run typecheck:node && npm run typecheck:web",
     "postinstall": "electron-builder install-app-deps",
-    "dist": "npm run build && electron-builder --win --x64"
+    "dist": "npm run build && electron-builder --win --x64",
+    "web:install": "ELECTRON_SKIP_BINARY_DOWNLOAD=1 npm ci --ignore-scripts && npm rebuild better-sqlite3 ffmpeg-static",
+    "web:build": "vite build -c vite.server.config.ts && vite build -c vite.web.config.ts",
+    "web:start": "node out/server/index.js"
   },
   "dependencies": {
     "@google/genai": "^2.24.0",
